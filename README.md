@@ -1,6 +1,6 @@
 Pssst Docker
 ============
-A docker receipt for [Pssst](https://github.com/cuhsat/pssst).
+A basic Docker receipt for [Pssst](https://github.com/cuhsat/pssst).
 
 License
 -------
