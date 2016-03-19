@@ -1,7 +1,9 @@
 Pssst Docker
 ============
-A basic Docker receipt for [Pssst](https://github.com/cuhsat/pssst).
+A basic Docker receipt for [Pssst](https://github.com/cuhsat/pssst) server.
 
-License
--------
-Released under the terms of the [GPLv3](LICENSE) license.
+Usage
+-----
+```
+$ docker build -f Dockerfile .
+```
