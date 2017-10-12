@@ -8,9 +8,6 @@ RUN apt-get upgrade -y
 # Install build chain tools
 RUN apt-get install -y git wget
 
-# Install Python
-RUN apt-get install -y python python-dev python-pip python-virtualenv
-
 # Install Redis
 RUN \
   cd /tmp && \
@@ -51,15 +48,11 @@ WORKDIR /opt/pssst
 
 # Install Pssst
 RUN \
-  cd /tmp && \
-  git clone https://github.com/cuhsat/pssst && \
-  mv pssst/src/server/* /pssst && \
-  rm -rf pssst && \
-  cd /opt/pssst && \
+  git clone https://github.com/cuhsat/pssst . && \
   npm install
 
 # Expose ports
 EXPOSE 62221
 
 # Define default command
-CMD ["redis-server", "/etc/redis/redis.conf", "&", "node", "server.js"]
+CMD ["redis-server", "/etc/redis/redis.conf", "&", "npm", "start"]
